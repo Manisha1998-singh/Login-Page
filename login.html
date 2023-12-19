@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="custom.css">
+  </head>
+
+<body>
+  <div class="div-outer">
+<form id="myForm" >
+    
+    <div class="container">
+      <h2>Login</h2>
+      <div id="errorMessage" class="red">
+       
+      </div>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="Uname" name="uname" >
+  
+      <label for="psw"  ><b>Password</b></label>
+      <input type="password"  id="password" placeholder="Enter Password" name="psw" >
+     
+    </div>
+
+  </form>
+
+  <button type="submit" name="submit" onclick="validation();">Login</button>
+      
+  <label class="float-left">
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+</div>
+  <script>
+  function validation() {
+    var un = document.querySelector('#Uname').value;
+    var pw = document.querySelector('#password').value;
+
+    if (un == "" || pw == "") {
+      document.getElementById("errorMessage").innerHTML = "Login was unsuccessful, please check your username and password";
+    } else {
+      document.getElementById("errorMessage").innerHTML = "You are successfully logged in.";
+      return false; // Prevent form submission
+    }
+  }
+</script>
+
+
+   
+</body>
+</html>
